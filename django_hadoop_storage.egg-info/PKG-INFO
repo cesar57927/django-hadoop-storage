@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: django-hadoop-storage
+Version: 0.1.2
+Summary: Module for use hadoop file system (hdfs) as django storage
+Home-page: https://sofisis.com
+Author: Cesar Augusto Cadavid Lopera
+Author-email: cesar57927@gmail.com
+License: BSD
+Description: Django hadoop storage provide python classes/functions
+        to use [hadoop file system](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) 
+         (hdfs) with django storage.
+        
+        ### Usage
+        
+        Based on [libhdfs](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/LibHdfs.html) 
+        official hadoop python connector and [pyarrow](https://arrow.apache.org/docs/python/filesystems.html)
+        library. 
+        
+        
+        ### Settings
+        For use hdfs as django storage set:
+        
+        ```python
+        HADOOP_HOST = 'localhost'  # set your own host
+        HADOOP_PORT = 8020  # set your own port
+        HADOOP_USER = 'hadoop'  # set your own user
+        HADOOP_HOME = '/usr/lib/hadoop/'  # set your own path
+        
+        MEDIA_ROOT = '/media/'
+        DEFAULT_FILE_STORAGE = 'hadoop_storage.HadoopStorage'
+        ```
+        
+        ### Storage
+        Use hadoop file storage with same methods and properties that 
+        [django File Storage](https://docs.djangoproject.com/en/3.0/ref/files/storage/)
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Framework :: Django :: 2.2
+Classifier: Framework :: Django :: 3.0
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Topic :: System :: Filesystems
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

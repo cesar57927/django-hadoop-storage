@@ -1,0 +1,8 @@
+README.md
+setup.py
+django_hadoop_storage.egg-info/PKG-INFO
+django_hadoop_storage.egg-info/SOURCES.txt
+django_hadoop_storage.egg-info/dependency_links.txt
+django_hadoop_storage.egg-info/requires.txt
+django_hadoop_storage.egg-info/top_level.txt
+hadoop_storage/__init__.py
