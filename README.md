@@ -2,6 +2,12 @@ Django hadoop storage provide python classes/functions
 to use [hadoop file system](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) 
  (hdfs) with django storage.
 
+
+Based on [libhdfs](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/LibHdfs.html) 
+official hadoop python connector and [pyarrow](https://arrow.apache.org/docs/python/filesystems.html)
+library.
+
+
 ### Requirements
 - Install java-1.8.0-openjdk-devel, In centos 7
 ```bash
@@ -16,11 +22,6 @@ sudo apt-get install openjdk-8-jdk
 
 - [Install hadoop](https://www.vultr.com/docs/how-to-install-hadoop-in-stand-alone-mode-on-centos-7)
 
-### Usage
-
-Based on [libhdfs](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/LibHdfs.html) 
-official hadoop python connector and [pyarrow](https://arrow.apache.org/docs/python/filesystems.html)
-library. 
 
 
 ### Settings
