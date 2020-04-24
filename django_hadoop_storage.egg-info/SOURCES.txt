@@ -1,4 +1,4 @@
-README.md
+README.rst
 setup.py
 django_hadoop_storage.egg-info/PKG-INFO
 django_hadoop_storage.egg-info/SOURCES.txt
