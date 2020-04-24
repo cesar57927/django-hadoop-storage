@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='django-hadoop-storage',
-    version='0.1.2',
+    version='0.1.3',
     packages=setuptools.find_packages(),
     url='https://sofisis.com',
     license='BSD',
