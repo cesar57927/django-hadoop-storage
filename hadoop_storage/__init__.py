@@ -131,22 +131,24 @@ class HadoopStorage(Storage):
 
     def get_available_name(self, name, max_length=100):
         # set a timestamp because hadoop override for same names
+        prefix = self.path_prefix
+        name = os.path.join(prefix, name)
         dir_name, file_name = os.path.split(name)
-
+    
         file_root, file_ext = os.path.splitext(file_name)
         file_root = unidecode(clean_char(file_root, '_'))
-
+        file_root = f"{now().strftime('%d%m%Y_%H%M%S%f')}_{file_root}"
+        name = os.path.join(dir_name, f'{file_root}{file_ext}')
+    
         # Validate if the name with the additional datetime ('%d%m%Y_%H%M%S%f') and the id_user_isis
         #  has more than 100 characters
-
-        if max_length and (len(name) + 26) >= max_length:
+    
+        if max_length and len(name) >= max_length:
             # Truncate file_root
-            aux = len(name) - len(file_root)
-            truncation = 74 - aux
+            truncation = len(file_root) - (len(name) - max_length)
             file_root = file_root[:truncation]
-
-        file_name = "%s_%s%s" % (now().strftime('%d%m%Y_%H%M%S%f'), file_root, file_ext)
-        return os.path.join(self.path_prefix, dir_name, file_name)
+    
+        return os.path.join(dir_name, f'{file_root}{file_ext}')
 
     def exists(self, name):
         return self.hdfs.exists(self.path(name))
