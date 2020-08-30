@@ -130,6 +130,7 @@ class HadoopStorage(Storage):
             self.hdfs.delete(name)
 
     def get_available_name(self, name, max_length=100):
+        max_length = min(100, max_length)
         # set a timestamp because hadoop override for same names
         prefix = self.path_prefix
         name = os.path.join(prefix, name)
